@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <climits>
+#include <cstdint>
 
 void part1() {
     std::vector<int> vecs = std::vector<int>();
