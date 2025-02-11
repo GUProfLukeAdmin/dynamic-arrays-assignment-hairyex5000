@@ -24,16 +24,10 @@ void part1() {
 }
 
 void part2() {
-    std::vector<char> vecs1 = std::vector<char>();
-    std::vector<bool> vecs2 = std::vector<bool>();
-    for (int i = 0; i < 10000; i++)
-    {
-        vecs1.push_back((char)('a' + (int)(rand()/(INT32_MAX / 24))));
-        vecs2.push_back((bool)(rand()/(INT32_MAX / 2)));
-    }
-
-    std::cout << "Memory usage of std::vector<bool>: " << sizeof(vecs2) + (((int) sizeof(bool)) * vecs2.capacity()) << " bytes" << std::endl;
-    std::cout << "Memory usage of std::vector<char>: " << sizeof(vecs1) + (((int) sizeof('a')) * vecs1.capacity()) << " bytes" << std::endl;
+    std::vector<char> vecs1 = std::vector<char>(10000);
+    std::vector<bool> vecs2 = std::vector<bool>(10000);
+    std::cout << "Memory usage of std::vector<bool>: " << (vecs2.capacity() / 8) << " bytes" << std::endl;
+    std::cout << "Memory usage of std::vector<char>: " << (vecs1.size() * sizeof('a')) << " bytes" << std::endl;
 }
 
 int main() {
